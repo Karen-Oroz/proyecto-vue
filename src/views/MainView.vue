@@ -1,15 +1,21 @@
 <template>
-<div class="container">
-    <Sidebar></Sidebar>
-    <div class="content"></div>
-        <router-view></router-view>
-</div>
-
-
+    <Header :mensaje="texto"></Header>
+    <div class ="container">
+        <Sidebar></Sidebar>
+        <div class="content">
+            <input type="texto" v-model="texto">
+            {{ texto }}
+            </input>
+            <router-view></router-view>
+        </div>
+    </div>
 </template>
 
 <script setup>
 import Sidebar from '@/components/Sidebar.vue';
+import Header from '@/components/Header.vue';
+import { ref } from 'vue';
+const texto = ref('');
 
 </script>
 
